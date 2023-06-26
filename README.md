@@ -76,9 +76,10 @@ Stress CPU on right after 30 minutes shows maximal CPU temperature less than 70Â
 ## PARI/GP
 
 I had huge problems with PARI/GP on Ubuntu 22.04 server on 7600X CPU (not on Win11 on 7600X):  
-https://pari.math.u-bordeaux.fr/archives/pari-users-2306/msg00095.html  
+httphttps://www.amazon.de/dp/B0B25NTRGD?s://pari.math.u-bordeaux.fr/archives/pari-users-2306/msg00095.html  
 
-All problems are gone after installing Ubuntu 22.04 Desktop on a fast SSD (history: [problem PARI/GP section](ubuntu_server.parigp.problem.md)).
+All problems are gone after installing Ubuntu 22.04 Desktop on a fast SSD (history: [problem PARI/GP section](ubuntu_server.parigp.problem.md)).  
+([Crucial P3 Plus 500GB M.2 NVMe SSD](https://www.amazon.de/dp/B0B25NTRGD) for 28.56â‚¬ or 31.20$).
 
 
 
