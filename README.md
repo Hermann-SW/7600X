@@ -89,6 +89,15 @@ What is scary is how bad 7600X Ubuntu runtimes are, resaon seems the be the many
 |36401|70.5|303.3|74.3|94.9%|
 |100355|660.8|1183.1|708.9|93.2%|
 
+
+I had this in ```/etc/gprc``` for all OSes:  
+```
+...
+parisizemax = 2G
+parisize = 2G
+...
+```
+
 perf stat output for 100355-digit prime run on 7600X Ubuntu:
 ```
       1,183,241.38 msec task-clock                #    1.000 CPUs utilized
