@@ -118,7 +118,7 @@ perf stat output for 100355-digit prime run on 7600X Ubuntu:
        0.142245000 seconds sys
 ```
 
-perf stat output for 100355-digit prime run on i7-11860H RHEL:
+perf stat output for 100355-digit prime run on i7-11850H RHEL:
 ```
         709,429.88 msec task-clock:u              #    1.000 CPUs utilized
                  0      context-switches:u        #    0.000 /sec
