@@ -135,7 +135,7 @@ perf stat output for 100355-digit prime run on i7-11860H RHEL:
 
 I used https://github.com/Hermann-SW/RSA_numbers_factored/blob/main/c%2B%2B/sqrtm1.cc for computing ```sqrt(-1) (mod p)```
 for 10,000-/36,401-/100,355-digit primes here as well. 7600X runtimes [s] are 10%+ better than i7-11850H. Currently without
-PBO (Performance Boost Optimization), matching Passmark ration from above Thread Mark values 3690/3152=85.4%:  
+PBO (Performance Boost Optimization), matching Passmark ratio from above Thread Mark values 3152/3690=85.4%:  
 
 |#digits of prime|Ubuntu 22.04 |RHEL 8.7||
 |-:|-:|-:|-:|
