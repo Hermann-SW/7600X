@@ -18,6 +18,8 @@ I found some not that expensive above 4,000 Thread Mark, but 7600X with 4,221 wa
 AMD Ryzen 5 7600X PC came with Win11 preinstalled on a 240GB SATA SSD.  
 I decided to keep that for being able to compare performance of Win11 with Ubunutu 22.04 Server on identical hardware and Bios settings.
 I installed Ubuntu 22.04 server on an external "SanDisk Extreme Pro USB 3.1 Solid Flash Drive" for now.
+Later I installed Ubuntu 22.04 desktop on additionally bought Crucial P3 Plus 500GB M.2 NVMe SSD.
+Finally I did buy 16GB DDR5-5600 RAM to replace the PC's 8GB DDR-4800 RAM.
 
 ### Concept of operations
 I switched to Linux at work 16 years agon, at home even earlier.
@@ -34,7 +36,7 @@ Windows Defender currently does not allow to ping/ssh/scp into Win11 from Pi400,
 ### Details of PC
 
 <img align="right" src="res/20230625_162149.part.16pc.jpg">
-I searched for "office PC 7600X" on German ebay, and found this as cheapest with 7600X CPU (487€ or 532$): https://www.ebay.de/itm/195733279470  
+I searched for "office PC 7600X" on German ebay, and found this as cheapest with 7600X CPU (486.89€ or 533.66$): https://www.ebay.de/itm/195733279470  
 
 
 Minimal parts: AMD Ryzen 5 7600X CPU, ASRock A620M-HDV/M.2 mainboard, 8GB DDR5-4800 RAM, 240GB SSD, integrated graphics, ...  
@@ -43,6 +45,41 @@ Minimal because I did not know what might be important, and high single core int
 I never bought a CPU only 9 months after launch date before ... current price of CPU is 50% of total PC price:  
 https://www.amd.com/en/products/cpu/amd-ryzen-5-7600x
 
+The additional [Crucial P3 Plus 500GB M.2 NVMe SSD](https://www.amazon.de/dp/B0B25NTRGD) did cost 28.56€ or 31.20$.  
+
+Finally the [Crucial RAM 16GB DDR5 5600MHz](https://www.amazon.de/dp/B0BLTH3KWV) did cost 48.99€ or 53.70$.  
+
+So complete price (PC + NVME SSD + DDR5-5600 RAM) was 565€ or 619$.
+
+#### major property of new PC, single core performance
+
+Currently all inestigations on Ubuntu and Win11 were done without PBO and with 8GB DDR5-4800 RAM.  
+
+I enabled PBO and 5200MHz DDR5-5600 RAM profile in Bios.  
+After that PC did not boot anymore, on many retries.  
+So I did reset Bios by shortening mainboard "Clear CMOS Jumper".  
+After that Bios was back on default values (most "Auto").  
+After that it booted straight away into Ubuntu, and I did run Passmark performance test.  
+I could not believe what I saw on screen, so did shoot several smartphone photos.  
+6 cores reported for 5452MHz, and ```CPU Single Threaded``` value of 4159 Million Operations/s.  
+![res/20230627_180616.15pc.jpg](res/20230627_180616.15pc.jpg)
+
+After reboot into Win11, running CPU-Z stress test showed CPU temperature maximum of 76°C only.   
+This screenshot shows Passmark run with ```CPU Single Threaded``` of 4222 Million Operations/s.  
+This is rank 18(!) of Passmark's ```Single Threaded Performance``` list of 3100+ CPU models, for only 619$.  
+https://www.cpubenchmark.net/singleThread.html
+![res/single.21447.4222.50pc.PNG](res/single.21447.4222.50pc.PNG)
+
+The other numbers are not as they should be, and I have currently no explanation why Bios default settings give rank 18 at all ...
+
+I just made sure that single core performance is real, by determining ```sqrt(-1) (mod p)``` for 10,000-/36,401-/100,355-digit primes, see section [#c-with-libgmpxx](#c-with-libgmpxx) below for details. Really only 75.7% of i7-11850H runtime for 100,355-digit prime!
+
+|#digits of prime|Ubuntu 22.04 |RHEL 8.7||
+|-:|-:|-:|-:|
+||7600X|i7-11850H|7600X /<br>i7-11850H|
+|10000|2.2|2.8|78.6%|
+|36401|45.8|59.6|76.8%|
+|100355|452.3|597.1|75.7%|
 
 ## Passmark
 
@@ -80,7 +117,6 @@ I had huge problems with PARI/GP on Ubuntu 22.04 server on 7600X CPU (not on Win
 httphttps://www.amazon.de/dp/B0B25NTRGD?s://pari.math.u-bordeaux.fr/archives/pari-users-2306/msg00095.html  
 
 All problems are gone after installing Ubuntu 22.04 Desktop on a fast SSD (history: [problem PARI/GP section](ubuntu_server.parigp.problem.md)).  
-([Crucial P3 Plus 500GB M.2 NVMe SSD](https://www.amazon.de/dp/B0B25NTRGD) for 28.56€ or 31.20$).
 
 
 
