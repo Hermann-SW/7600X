@@ -23,7 +23,7 @@ I installed Ubuntu 22.04 server on an external "SanDisk Extreme Pro USB 3.1 Soli
 I switched to Linux at work 16 years agon, at home even earlier.
 Therefore I have no experience in how to make Win11 secure, and decided to block internet access for new PC in cable router. So my Win11 will never get internet access again (it likely had internet access at company where I bought it, during installation of Win11).  
 
-In case new PC Ubuntu needs internet access (eg. to install new stuff), I enable internet access in cable router, install and then disable internet access gain.  
+In case new PC Ubuntu needs internet access (eg. to install new stuff), I enable internet access in cable router, install and then disable internet access again.  
 
 For installing new software on Win11, I download install package on my Pi400 into ```~/win11``` directory. Then I us Win11 Terminal ```scp``` to copy onto Win11, and install then.
 
