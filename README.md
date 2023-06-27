@@ -103,6 +103,7 @@ parisize = 2G
 |10000|(3.0)|2.7|3.0|90%|
 |36401|(70.5)|65.9|74.3|88.7%|
 |100355|(660.8)|611.4|708.9|86.2%|
+With these measurements I can rule out Win11 for 7600X, since it is 8.0% slower than Ubuntu 22.04 desktop on same CPU plus Bios settings.
 
 
 I did run 6 ```gp``` on 36,401-digit prime in parallel, nothing else during that time:  
