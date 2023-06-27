@@ -59,27 +59,42 @@ I enabled PBO and 5200MHz DDR5-5600 RAM profile in Bios.
 After that PC did not boot anymore, on many retries.  
 So I did reset Bios by shortening mainboard "Clear CMOS Jumper".  
 After that Bios was back on default values (most "Auto").  
-After that it booted straight away into Ubuntu, and I did run Passmark performance test.  
+And booted straight away into Ubuntu, where I did run Passmark performance test.  
 I could not believe what I saw on screen, so did shoot several smartphone photos.  
 6 cores reported for 5452MHz, and ```CPU Single Threaded``` value of 4159 Million Operations/s.  
 ![res/20230627_180616.15pc.jpg](res/20230627_180616.15pc.jpg)
 
-After reboot into Win11, running CPU-Z stress test showed CPU temperature maximum of 76°C only.   
+After reboot into Win11, running CPU-Z stress test showed CPU temperature maximum of 76°C only.
+
+
 This screenshot shows Passmark run with ```CPU Single Threaded``` of 4222 Million Operations/s.  
-This is rank 18(!) of Passmark's ```Single Threaded Performance``` list of 3100+ CPU models, for only 619$.  
+That is rank 18(!) of Passmark's ```Single Threaded Performance``` list of 3100+ CPU models, for only 619$.  
 https://www.cpubenchmark.net/singleThread.html
 ![res/single.21447.4222.50pc.PNG](res/single.21447.4222.50pc.PNG)
 
 The other numbers are not as they should be, and I have currently no explanation why Bios default settings give rank 18 at all ...
 
-I just made sure that single core performance is real, by determining ```sqrt(-1) (mod p)``` for 10,000-/36,401-/100,355-digit primes, see section [#c-with-libgmpxx](#c-with-libgmpxx) below for details. Really only 75.7% of i7-11850H runtime for 100,355-digit prime!
+I just made sure that single core performance is real, by determining ```sqrt(-1) (mod p)``` for 10,000-/36,401-/100,355-digit primes, see section [#c-with-libgmpxx](#c-with-libgmpxx) below for details. Really only 75.7%(!) of i7-11850H runtime for 100,355-digit prime (matching single threaded list numbers for both CPUs well: 3152 / 4222 = 74.7%).
+
 
 |#digits of prime|Ubuntu 22.04 |RHEL 8.7||
 |-:|-:|-:|-:|
-||7600X|i7-11850H|7600X /<br>i7-11850H|
+||7600X<br>w/ boost|i7-11850H|7600X /<br>i7-11850H|
 |10000|2.2|2.8|78.6%|
 |36401|45.8|59.6|76.8%|
 |100355|452.3|597.1|75.7%|
+
+What I like more than just the numbers is, that ```perf stat``` reports ```5,306 GHz``` for 7.5 minutes runtime on average!
+```
+hermann@7600x:~/RSA_numbers_factored/c++$ perf stat ./sqrtm1 2 > out 2> err
+hermann@7600x:~/RSA_numbers_factored/c++$ grep GHz err
+ 2.399.752.357.779      cycles                    #    5,306 GHz                      (83,33%)
+hermann@7600x:~/RSA_numbers_factored/c++$ head -3 err
+smallest quadratic non-residue prime: 7
+452.293s
+done
+hermann@7600x:~/RSA_numbers_factored/c++$ 
+```
 
 ## Passmark
 
