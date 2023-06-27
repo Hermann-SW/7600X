@@ -25,10 +25,11 @@ Therefore I have no experience in how to make Win11 secure, and decided to block
 
 In case new PC Ubuntu needs internet access (eg. to install new stuff), I enable internet access in cable router, install and then disable internet access gain.  
 
-For installing new software on Win11, I download install package on my Pi400 into ```~/win11``` directory, and run ```python -m http.server``` there then.
-On Win11 I open ```http://127.0.0.1:8000``` in Edge browser (never used that before), download from there and install.
+For installing new software on Win11, I download install package on my Pi400 into ```~/win11``` directory. Then I us Win11 Terminal ```scp``` to copy onto Win11, and install then.
 
-New PC has Lan access, and I created some screenshots on Win11 side with installed "snipping tool". For now I did reboot new PC into Linux, mount the big Win11 NTFS partition and copy files to my Pi400 with ```scp```. That way the screenshots in this repo came into place. I might install WinSCP to make that copying easier.
+New PC has Lan access, and I created some screenshots on Win11 side with installed "snipping tool". I copy files to my Pi400 with Win11 Terminal ```scp```.
+
+Windows Defender currently does not allow to ping/ssh/scp into Win11 from Pi400, but as long as the other direction is fully functional that is fine.
 
 ### Details of PC
 
