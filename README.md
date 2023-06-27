@@ -143,7 +143,7 @@ hermann@7600x:~/RSA_numbers_factored/pari$
 
 ```
 
-```perf stat``` output for 100355-digit prime run on 7600X Ubuntu (currently without PBO=Performance Boost Optimization, with DDR5-4800 RAM):
+```perf stat``` output for single 100355-digit prime run on 7600X Ubuntu (currently without PBO=Performance Boost Optimization, with DDR5-4800 RAM):
 ```
         611.605,71 msec task-clock                #    1,000 CPUs utilized
              8.980      context-switches          #   14,683 /sec
