@@ -130,6 +130,19 @@ out6:  ***   last result computed in 1min, 5,990 ms.
 hermann@7600x:~/RSA_numbers_factored/pari$
 ```
 
+The number of instructions is slightly different for the 6 ```gp```s:  
+```
+hermann@7600x:~/RSA_numbers_factored/pari$ grep instructions err?
+err1:   933.294.654.610      instructions              #    3,01  insn per cycle         
+err2:   933.309.870.993      instructions              #    3,01  insn per cycle         
+err3:   933.319.974.107      instructions              #    3,01  insn per cycle         
+err4:   933.300.655.312      instructions              #    3,01  insn per cycle         
+err5:   933.300.069.071      instructions              #    3,01  insn per cycle         
+err6:   933.308.641.012      instructions              #    3,01  insn per cycle         
+hermann@7600x:~/RSA_numbers_factored/pari$ 
+
+```
+
 ```perf stat``` output for 100355-digit prime run on 7600X Ubuntu (currently without PBO=Performance Boost Optimization, with DDR5-4800 RAM):
 ```
         611.605,71 msec task-clock                #    1,000 CPUs utilized
