@@ -25,7 +25,7 @@ Therefore I have no experience in how to make Win11 secure, and decided to block
 
 In case new PC Ubuntu needs internet access (eg. to install new stuff), I enable internet access in cable router, install and then disable internet access again.  
 
-For installing new software on Win11, I download install package on my Pi400 into ```~/win11``` directory. Then I us Win11 Terminal ```scp``` to copy onto Win11, and install then.
+For installing new software on Win11, I download install package on my Pi400 into ```~/win11``` directory. Then I use Win11 Terminal ```scp``` to copy onto Win11, and install then.
 
 New PC has Lan access, and I created some screenshots on Win11 side with installed "snipping tool". I copy files to my Pi400 with Win11 Terminal ```scp```.
 
