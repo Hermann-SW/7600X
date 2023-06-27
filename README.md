@@ -105,7 +105,7 @@ parisize = 2G
 |100355|(660.8)|611.4|708.9|86.2%|
 
 
-I did run 6 ```gp``` on 100,355-digit prime in parallel, nothing else during that time:  
+I did run 6 ```gp``` on 36,401-digit prime in parallel, nothing else during that time:  
 ```for((i=1;i<=6;++i)); do  perf stat gp < sqrtm1.gp > out$i 2> err$i & done```
 
 7600X runs at 4.684GHz on all six cores, with runtimes [ms] 65974 / 66008.5 / 66052 (min/avg/max), only slightly longer than 65915ms for single process running:  
