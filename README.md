@@ -111,7 +111,7 @@ Last, but not least, I did run sqrtm1 on 36401-digit prime 6× in parallel:
 for((i=1; i<=6; ++i)); do perf stat ./sqrtm1 1 > out$i 2> err$i & done; sleep 50
 ```
 
-```perf stat``` reported 5.019GHz on all 6 cores! And runtimes reduced by less than 7.25% (45.8s/49.379s=92.752%) compared to single core execution.
+```perf stat``` reported 5.019GHz on all 6 cores! And runtimes increased by at most 7.8% (49.379s/45.8s=107.8%) compared to single core execution.
 
 ```
 hermann@7600x:~/RSA_numbers_factored/c++$ grep GHz err?
