@@ -45,7 +45,15 @@ Minimal because I did not know what might be important, and high single core int
 I never bought a CPU only 9 months after launch date before ... current price of CPU is 50% of total PC price:  
 https://www.amd.com/en/products/cpu/amd-ryzen-5-7600x
 
-The additional [Crucial P3 Plus 500GB M.2 NVMe SSD](https://www.amazon.de/dp/B0B25NTRGD) did cost 28.56€ or 31.20$.  
+The additional [Crucial P3 Plus 500GB M.2 NVMe SSD](https://www.amazon.de/dp/B0B25NTRGD) did cost 28.56€ or 31.20$. It supports Gen4x4 which is available on ASRock mainboard. Maximal read speed is "up to" 5000MB/s, measured speed of 1460MB/s is nice as well:  
+```
+hermann@7600x:~$ sudo hdparm -tT /dev/nvme0n1
+
+/dev/nvme0n1:
+ Timing cached reads:   66182 MB in  2.00 seconds = 33165.89 MB/sec
+ Timing buffered disk reads: 4384 MB in  3.00 seconds = 1460.92 MB/sec
+hermann@7600x:~$ 
+```
 
 Finally the [Crucial RAM 16GB DDR5 5600MHz](https://www.amazon.de/dp/B0BLTH3KWV) did cost 48.99€ or 53.70$.  
 
@@ -63,6 +71,8 @@ And booted straight away into Ubuntu, where I did run Passmark performance test.
 I could not believe what I saw on screen, so did shoot several smartphone photos.  
 6 cores reported for 5452MHz, and ```CPU Single Threaded``` value of 4159 Million Operations/s.  
 ![res/20230627_180616.15pc.jpg](res/20230627_180616.15pc.jpg)
+
+Next I disabled SMT (Simultaneous MultiThreating) and SVT (Secure Virtual Machine) in Bios, that were enabled by Bios reset. I want to run at most one compute intensive task per one of the 6 cores, and not do virtualization.
 
 After reboot into Win11, running CPU-Z stress test showed CPU temperature maximum of 76°C only.
 
@@ -95,6 +105,32 @@ smallest quadratic non-residue prime: 7
 done
 hermann@7600x:~/RSA_numbers_factored/c++$ 
 ```
+
+Last, but not least, I did run sqrtm1 on 36401-digit prime 6× in parallel:  
+```
+for((i=1; i<=6; ++i)); do perf stat ./sqrtm1 1 > out$i 2> err$i & done; sleep 50
+```
+
+```perf stat``` reported 5.019GHz on all 6 cores! And runtimes reduced by less than 7.25% (45.8s/49.379s=92.752%) compared to single core execution.
+
+```
+hermann@7600x:~/RSA_numbers_factored/c++$ grep GHz err?
+err1:   246.553.792.473      cycles                    #    5,019 GHz                      (83,32%)
+err2:   246.044.857.451      cycles                    #    5,019 GHz                      (83,33%)
+err3:   246.383.433.696      cycles                    #    5,019 GHz                      (83,33%)
+err4:   247.880.628.160      cycles                    #    5,020 GHz                      (83,33%)
+err5:   245.969.957.044      cycles                    #    5,019 GHz                      (83,33%)
+err6:   246.262.037.340      cycles                    #    5,019 GHz                      (83,33%)
+hermann@7600x:~/RSA_numbers_factored/c++$ grep "^[0-9][0-9.]*s" err?
+err1:49.119s
+err2:49.0201s
+err3:49.0884s
+err4:49.379s
+err5:49.0044s
+err6:49.0637s
+hermann@7600x:~/RSA_numbers_factored/c++
+```
+49s runtimes for computing "2 to the power of (p/4) modulo p" for big prime number p (36401 decimal digits).
 
 ## Passmark
 
