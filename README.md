@@ -130,7 +130,7 @@ err5:49.0044s
 err6:49.0637s
 hermann@7600x:~/RSA_numbers_factored/c++
 ```
-49s runtimes for computing "2 to the power of (p/4) modulo p" for big prime number p (36401 decimal digits).
+49s runtimes for computing "2 to the power of (p-1)/4 modulo p" for big prime number p (36401 decimal digits).
 
 ## Passmark
 
