@@ -132,6 +132,20 @@ hermann@7600x:~/RSA_numbers_factored/c++
 ```
 49s runtimes for computing "2 to the power of (p-1)/4 modulo p" for big prime number p (36401 decimal digits).
 
+Factoring RSA-100 in 1:32:59h was already impressive, but factoring RSA-110 in less than 14h is amazing (older computer took more than 26h):  
+https://github.com/Hermann-SW/msieve#readme
+```
+hermann@7600x:~/msieve/test-110$ perf stat make 2>err
+...
+52c52
+< elapsed time 13:43:43
+---
+> elapsed time 26:41:28
+hermann@7600x:~/msieve/test-110$ grep GHz err
+258.615.607.146.484      cycles                    #    5,233 GHz                      (83,33%)
+hermann@7600x:~/msieve/test-110$ 
+```
+
 ## Passmark
 
 ### Win11 screenshots
