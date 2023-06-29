@@ -84,6 +84,8 @@ https://www.cpubenchmark.net/singleThread.html
 
 The other numbers are not as they should be, and I have currently no explanation why Bios default settings give rank 18 at all ...
 
+#### real runtimes for computations on big primes up to 100355 decimal digits
+ 
 I just made sure that single core performance is real, by determining ```sqrt(-1) (mod p)``` for 10,000-/36,401-/100,355-digit primes, see section [#c-with-libgmpxx](#c-with-libgmpxx) below for details. Really only 75.7%(!) of i7-11850H runtime for 100,355-digit prime (matching single threaded list numbers for both CPUs well: 3152 / 4222 = 74.7%).
 
 
@@ -132,7 +134,9 @@ hermann@7600x:~/RSA_numbers_factored/c++
 ```
 49s runtimes for computing "2 to the power of (p-1)/4 modulo p" for big prime number p (36401 decimal digits).
 
-Factoring RSA-100 in 1:32:59h was already impressive, but factoring RSA-110 in less than 14h is amazing (older computer took more than 26h):  
+#### Factoring RSA-100 in 1.5h and RSA-110 in 13.7h
+
+Factoring RSA-100 in 1:32:59h was already impressive, but factoring RSA-110 in less than 14h is amazing (older computer took more than 26h). My msieve fork makes sure that computation is identical on all platforms (by a fixed random seed, and rewriting CPU cache size dependent code):  
 https://github.com/Hermann-SW/msieve#readme
 ```
 hermann@7600x:~/msieve/test-110$ perf stat make 2>err
