@@ -150,6 +150,9 @@ hermann@7600x:~/msieve/test-110$ grep GHz err
 hermann@7600x:~/msieve/test-110$ 
 ```
 
+The "only slight increase" (7.8%) in CPU runtimes when running 6 jobs in parallel reported for running ```sqrtm1``` above does not hold for factoring RSA numbers with msieve. Runtime overhead gradually increases with the number of processes. Factoring RSA-79 six times in parallel adds 20% to runtime, factoring RSA-100 six times in parallel adds 53.2% CPU runtime. Find details here:  
+https://github.com/Hermann-SW/msieve#readme
+
 ## Passmark
 
 ### Win11 screenshots
